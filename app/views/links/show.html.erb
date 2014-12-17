@@ -1,1 +1,11 @@
-<h2>Showing growing</h2>
+<h2>Showing </h2>
+<p>
+  <b>Name:</b>
+  <%= @link.title %>
+</p>
+
+<p>
+  <b>URL:</b>
+  <%= @link.url %>
+</p>
+<%= button_to 'Destroy', @link, :method => :delete, :onclick => "return confirm('Are you sure you want to delete this post?')" %>

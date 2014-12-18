@@ -1,8 +1,13 @@
 <h2> I ama Homepage </h2>
 <%= link_to "Add a link", new_link_path %>
 <h3>Posted Links</h3>
-<ul>
+<%= will_paginate @links %>
+<table>
+  <tr>
   <% @links.each do |link| %>
-  <li><%= link_to link.title, link_path(link.id) %></li>
+  <td><%= link_to link.title, link_path(link.id) %></td>
+  <td><%= link_to link.url, link.url, :target => "_blank" %></td>
+  </tr>
   <% end %>
-</ul>
+</table>
+<%= will_paginate @links %>

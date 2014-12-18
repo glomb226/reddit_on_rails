@@ -44,10 +44,12 @@ class LinksController < ApplicationController
   end #update
   def destroy
     @link = Link.where(:id => params[:id]).first
+    if @link.present?
     @link.destroy
+    end
 
     respond_to do |format|
-      format.html { redirect_to links_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end

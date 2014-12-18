@@ -1,2 +1,8 @@
 <h2> I ama Homepage </h2>
 <%= link_to "Add a link", new_link_path %>
+<h3>Posted Links</h3>
+<ul>
+  <% @links.each do |link| %>
+  <li><%= link_to link.title, link_path(link.id) %></li>
+  <% end %>
+</ul>
